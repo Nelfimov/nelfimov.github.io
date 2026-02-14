@@ -7,7 +7,8 @@ import Header from '../components/Header.astro';
 	<head>
 		<meta charset="UTF-8" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="theme-color" content="#fff" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#202020" />
     <meta name="application-name" content="Nikita Elfimov Web Dev portfolio" />
     <meta name="msapplication-TileColor" content="#fff" />
     <meta name="msapplication-TileImage" content="956f8a98" />
@@ -29,6 +30,23 @@ import Header from '../components/Header.astro';
       <slot />
     </main>
     <Footer />
+
+    <script is:inline>
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+      const applyTheme = (isDark) => {
+        document.body.classList.toggle('dark', isDark)
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light'
+      }
+
+      applyTheme(mediaQuery.matches)
+
+      if (typeof mediaQuery.addEventListener === 'function') {
+        mediaQuery.addEventListener('change', (event) => applyTheme(event.matches))
+      } else {
+        mediaQuery.addListener((event) => applyTheme(event.matches))
+      }
+    </script>
 	</body>
 
 </html>
