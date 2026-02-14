@@ -122,7 +122,8 @@ const { locale, meta, nav, footer } = Astro.props;
     color: rgb(227, 227, 227);
   }
 
-  body.dark section.about img.tech-icon {
+  body.dark section.about img.tech-icon,
+  body.dark img[data-menu-toggle] {
     filter: invert();
   }
 
