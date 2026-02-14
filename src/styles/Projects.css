@@ -39,6 +39,10 @@ section.projects .card {
   transition: transform 0.5s ease-out;
 }
 
+body.dark section.projects .card h3 {
+  color: rgba(0, 0, 0, 0.9);
+}
+
 section.projects .card > a {
   height: 100%;
   display: grid;
