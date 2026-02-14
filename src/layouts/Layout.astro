@@ -1,0 +1,107 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#fff" />
+    <meta name="application-name" content="Nikita Elfimov Web Dev portfolio" />
+    <meta name="msapplication-TileColor" content="#fff" />
+    <meta name="msapplication-TileImage" content="956f8a98" />
+    <meta name="msapplication-config" content="560bc9bc" />
+    <meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="yandex-tableau-widget" href="/assets/yandex-browser-50x50.png" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+
+    <title>Portfolio: Nikita Elfimov, Web Dev</title>
+	</head>
+
+	<body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+	</body>
+
+</html>
+
+<style is:global>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+  main {
+    padding: 4rem 0;
+    max-width: 70rem;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  hr {
+    width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    main {
+      padding: 3rem 0;
+    }
+  }
+
+  body {
+    margin: 0;
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+      'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    align-content: center;
+    transition:
+      background-color 0.7s,
+      color 0.7s;
+    color: rgb(42, 42, 42);
+  }
+
+  body.dark {
+    background-color: rgb(32, 32, 32);
+  }
+
+  body.dark *,
+  body.dark p {
+    color: rgb(227, 227, 227);
+  }
+
+  body.dark img.tech-icon {
+    filter: invert();
+  }
+
+  * {
+    scroll-behavior: smooth;
+  }
+
+  p {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  a.anchor {
+    display: block;
+    position: relative;
+    top: -100px;
+    visibility: hidden;
+  }
+
+  section {
+    padding-bottom: 20px;
+  }
+</style>

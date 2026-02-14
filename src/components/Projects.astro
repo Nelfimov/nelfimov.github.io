@@ -1,0 +1,111 @@
+---
+import ICONS_LIST from '../assets/icons.json'
+import { Image } from 'astro:assets'
+import Ecommerce from '../assets/projects/ecommerce.png'
+import Ecommerce2 from '../assets/projects/ecommerce2.png'
+import Waldo from '../assets/projects/waldo.png'
+import Battleship from '../assets/projects/battleship.png'
+import Todo from '../assets/projects/todo.png'
+import Memory from '../assets/projects/memory.png'
+import TicTacToe from '../assets/projects/tictactoe.png'
+import '../styles/Projects.css'
+
+const PROJECTS = [
+  {
+    "id": "1",
+    "name": "Ecommerce shop",
+    "src": Ecommerce,
+    "href": "http://217.25.237.151/",
+    "stack": "django python javascript sqlite html css"
+  },
+  {
+    "id": "2",
+    "name": "Ecommerce shop 2",
+    "src": Ecommerce2,
+    "href": "https://github.com/Nelfimov/eshop-fullstack",
+    "stack": "nextjs typescript express node mongodb bootstrap html css"
+  },
+  {
+    "id": "3",
+    "name": "Where is Waldo game",
+    "src": Waldo,
+    "href": "https://nelfimov.github.io/odin-phototaggingapp/",
+    "stack": "react firebase html css webpack"
+  },
+  {
+    "id": "4",
+    "name": "Battleship game",
+    "src": Battleship,
+    "href": "https://nelfimov.github.io/odin-battleship/",
+    "stack": "javascript html css webpack"
+  },
+  {
+    "id": "5",
+    "name": "Todo app",
+    "src": Todo,
+    "href": "https://nelfimov.github.io/odin-todoapp/",
+    "stack": "javascript html css webpack"
+  },
+  {
+    "id": "6",
+    "name": "Memory card game",
+    "src": Memory,
+    "href": "https://nelfimov.github.io/odin-memory-card/",
+    "stack": "react html css webpack"
+  },
+  {
+    "id": "7",
+    "name": "Tic-tac-toe game",
+    "src": TicTacToe,
+    "href": "https://nelfimov.github.io/odin-tictactoe/",
+    "stack": "javascript html css webpack"
+  }
+]
+
+---
+
+<section class="projects">
+  <a class="nav-link" id="projects"></a>
+  <h1>My projects</h1>
+  <div class="card-container" data-project-cards>
+    {PROJECTS.map((project) => (
+      <div class="card">
+        <a href={project.href}>
+          <Image src={project.src} alt={project.name} width="200" height="180" />
+          <h3>{project.name}</h3>
+          <div class="stack">
+            {project.stack.split(' ').map((item) => (
+              <img
+                src={ICONS_LIST.tech[item].src}
+                alt={item}
+                class="tech-icon small"
+              />
+            ))}
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const cardContainer = document.querySelector('[data-project-cards]')
+
+  if (cardContainer) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+          observer.unobserve(entry.target)
+        }
+      },
+      {
+        rootMargin: '0px 0px -100px 0px',
+      }
+    )
+
+    const cards = Array.from(cardContainer.children)
+    cards.forEach((card) => observer.observe(card))
+  }
+</script>

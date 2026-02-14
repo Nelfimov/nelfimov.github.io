@@ -1,6 +1,8 @@
 :root {
   --background: rgba(188, 188, 188, 0.4);
-  --outline-text: 0 0 2px rgb(226, 226, 226), 0 0 2px rgb(226, 226, 226), 0 0 2px rgb(226, 226, 226), 0 0 2px rgb(226, 226, 226);
+  --outline-text:
+    0 0 2px rgb(226, 226, 226), 0 0 2px rgb(226, 226, 226),
+    0 0 2px rgb(226, 226, 226), 0 0 2px rgb(226, 226, 226);
 }
 
 section.hero {
@@ -8,7 +10,7 @@ section.hero {
 }
 
 section.hero .name {
-  animation: slideInFromLeft .7s ease-out;
+  animation: slideInFromLeft 0.7s ease-out;
   position: relative;
   z-index: 1;
   background-color: var(--background);
@@ -57,7 +59,7 @@ section.hero picture {
   top: 2%;
   right: 2%;
   z-index: 0;
-  animation: slideInFromRight .7s ease-out;
+  animation: slideInFromRight 0.7s ease-out;
 }
 
 section.hero img {
@@ -68,17 +70,7 @@ section.hero img {
   top: 2%;
   right: 2%;
   z-index: 0;
-  animation: slideInFromRight .7s ease-out;
-}
-
-section.hero img.loading {
-  filter: blur(20px);
-  clip-path: inset(0);
-}
-
-section.hero img.loaded {
-  filter: blur(0px);
-  transition: filter .5s linear;
+  animation: slideInFromRight 0.7s ease-out;
 }
 
 @keyframes slideInFromLeft {

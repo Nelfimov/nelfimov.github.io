@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets'
+import HeroHigh from '../assets/hero/hero.jpg'
+import '../styles/Hero.css'
+---
+
+<section class="hero">
+  <a class="nav-link" id="hero"></a>
+  <div class="info">
+    <div class="name">
+      <h1>Nikita</h1>
+      <h1>Elfimov</h1>
+    </div>
+    <div class="prof">
+      <h2>Web</h2>
+      <h2>Developer</h2>
+    </div>
+  </div>
+  <Image
+    src={HeroHigh}
+    alt="profile"
+  />
+</section>

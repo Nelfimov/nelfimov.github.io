@@ -8,7 +8,10 @@ header {
   left: 50%;
   transform: translateX(-50%);
   z-index: 7;
-  transition: color 0.5s, background-color 0.5s, filter 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s,
+    filter 0.5s;
 }
 
 header .container {
@@ -112,7 +115,9 @@ nav.menu {
     top: 5%;
     left: 50%;
     transform: translate(-50%, -100%);
-    transition: all 0.5s ease-in-out, opacity 0.5s 0.2s;
+    transition:
+      all 0.5s ease-in-out,
+      opacity 0.5s 0.2s;
     background-color: rgba(36, 36, 36);
     padding: 0;
     margin: 0;

@@ -1,0 +1,103 @@
+---
+import '../styles/Header.css'
+import ICONS_LIST from '../assets/icons.json'
+
+const NAV_LINKS = [
+  { href: '#hero', text: 'me' },
+  { href: '#about', text: 'about' },
+  { href: '#projects', text: 'projects' },
+  { href: 'https://github.com/nelfimov', text: 'github' },
+]
+---
+
+<header>
+  <div class="container">
+    <span>
+      <a href="#" aria-label="home">My portfolio</a>
+    </span>
+    <nav class="links">
+      {NAV_LINKS.map((item) => (
+        <a href={item.href} aria-label={item.text}>
+          {item.text}
+        </a>
+      ))}
+    </nav>
+    <div class="menu-button">
+      <img src={ICONS_LIST.general.menu} alt="menu" data-menu-toggle />
+    </div>
+  </div>
+</header>
+<nav class="menu">
+  <ul>
+    {NAV_LINKS.map((item) => (
+      <li>
+        <a href={item.href} aria-label={item.text}>
+          {item.text}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+<div class="overlay" />
+
+<script>
+  const header = document.querySelector('header')
+  const menu = document.querySelector('nav.menu')
+  const menuToggle = document.querySelector('[data-menu-toggle]')
+
+  const syncScrollState = () => {
+    if (!header) return
+    const top = window.scrollY
+    if (top > 50) {
+      header.classList.add('scrolled')
+    } else if (top <= 50 && !menu?.classList.contains('active')) {
+      header.classList.remove('scrolled')
+    }
+  }
+
+  const updateActiveNav = (targetId, isActive) => {
+    const escapedId = CSS.escape(targetId)
+    const desktopAnchor = document.querySelector(
+      `nav.links a[href*="${escapedId}"]`
+    )
+    const menuAnchor = document.querySelector(
+      `nav.menu a[href*="${escapedId}"]`
+    )
+
+    if (isActive) {
+      desktopAnchor?.classList.add('active')
+      menuAnchor?.classList.add('active')
+    } else {
+      desktopAnchor?.classList.remove('active')
+      menuAnchor?.classList.remove('active')
+    }
+  }
+
+  if (menuToggle && menu && header) {
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active')
+      menuToggle.classList.toggle('click')
+      if (!header.classList.contains('scrolled')) {
+        header.classList.add('scrolled')
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        updateActiveNav(entry.target.id, entry.isIntersecting)
+      })
+    },
+    {
+      rootMargin: '-200px 0px',
+      threshold: 1,
+    }
+  )
+
+  const anchors = document.querySelectorAll('a.nav-link')
+  anchors.forEach((anchor) => observer.observe(anchor))
+
+  window.addEventListener('scroll', syncScrollState)
+  syncScrollState()
+</script>
