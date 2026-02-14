@@ -76,10 +76,6 @@
       "label": "Bootstrap",
       "src": "/assets/icons/bootstrap.svg"
     },
-    "vite": {
-      "label": "Vite",
-      "src": "/assets/icons/vite.svg"
-    },
     "webpack": {
       "label": "Webpack",
       "src": "/assets/icons/webpack.svg"
