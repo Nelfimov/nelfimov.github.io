@@ -1,5 +1,5 @@
 ---
-import ProgressiveImage from './ProgressiveImage.tsx'
+import ProgressiveImage from './ProgressiveImage.astro'
 ---
 
 <section class="hero">
@@ -14,7 +14,7 @@ import ProgressiveImage from './ProgressiveImage.tsx'
       <h2>Developer</h2>
     </div>
   </div>
-  <ProgressiveImage client:only />
+  <ProgressiveImage />
 </section>
 
 <style is:global>
@@ -139,4 +139,3 @@ section.hero img.loaded {
   }
 }
 </style>
-
