@@ -2,34 +2,23 @@
 import '../styles/About.css'
 import ICONS_LIST from '../assets/icons.json'
 
+interface Props {
+  about: {
+    title: string
+    html: string
+  }
+}
+
+const { about } = Astro.props
+
 const techItems = Object.values(ICONS_LIST.tech)
 ---
 
 <section class="about">
   <a class="nav-link" id="about"></a>
-  <h1>About me</h1>
+  <h1>{about.title}</h1>
   <div data-about-observe>
-    <p>
-      A radiophysics student currently employed as Procurement Manager
-      passionately learning Web Development.
-      <br />
-      <br />
-      My journey started as a Back-End Dev student of
-      <a href="https://practicum.yandex.ru/">Yandex Practicum</a>. I felt
-      out of place since most of the students with whom I had to cooperate
-      for some tasks did not show same interest and motivation.
-      <br />
-      <br />
-      I decided to leave and proceed on my own. My first personal pet
-      project was ecommerce site built with Django. However I lacked some
-      fundamental knowledge of CSS, JS.
-      <br />
-      <br />
-      This is where I stumbled across
-      <a href="https://theodinproject.com">The Odin Project</a>. This helped
-      me so much in understanding Web Dev and I continue forward in learning
-      new things with it!
-    </p>
+    <p set:html={about.html}></p>
     <div class="tech">
       {techItems.map((item) => (
         <div class="stack">

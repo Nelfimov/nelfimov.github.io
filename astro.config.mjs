@@ -14,5 +14,15 @@ export default defineConfig({
   site: process.env.SITE ?? `https://${owner}.github.io`,
   base,
   integrations: [react()],
+  i18n: {
+    locales: ['en', 'ru'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: true,
+    },
+    fallback: {
+      ru: 'en',
+    },
+  },
 })
-

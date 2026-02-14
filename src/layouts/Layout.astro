@@ -1,15 +1,38 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import type { Locale } from '../i18n/content';
+
+interface Props {
+  locale: Locale;
+  meta: {
+    title: string;
+    applicationName: string;
+  };
+  nav: {
+    me: string;
+    about: string;
+    projects: string;
+    github: string;
+    switchTo: string;
+    switchAriaLabel: string;
+    menuAlt: string;
+  };
+  footer: {
+    builtWith: string;
+  };
+}
+
+const { locale, meta, nav, footer } = Astro.props;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
 	<head>
 		<meta charset="UTF-8" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#202020" />
-    <meta name="application-name" content="Nikita Elfimov Web Dev portfolio" />
+    <meta name="application-name" content={meta.applicationName} />
     <meta name="msapplication-TileColor" content="#fff" />
     <meta name="msapplication-TileImage" content="956f8a98" />
     <meta name="msapplication-config" content="560bc9bc" />
@@ -21,15 +44,15 @@ import Header from '../components/Header.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 
-    <title>Portfolio: Nikita Elfimov, Web Dev</title>
+    <title>{meta.title}</title>
 	</head>
 
 	<body>
-    <Header />
+    <Header locale={locale} nav={nav} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer footer={footer} />
 
     <script is:inline>
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')

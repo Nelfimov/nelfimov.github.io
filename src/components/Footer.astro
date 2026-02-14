@@ -1,11 +1,19 @@
 ---
 import ICONS_LIST from '../assets/icons.json'
 import '../styles/Footer.css'
+
+interface Props {
+  footer: {
+    builtWith: string
+  }
+}
+
+const { footer } = Astro.props
 ---
 
 <footer>
   <div class="container">
-    <span>Built with:</span>
+    <span>{footer.builtWith}</span>
     <img
       src={ICONS_LIST.tech.astro.src}
       alt={ICONS_LIST.tech.astro.label}

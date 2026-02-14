@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Projects from '../../components/Projects.astro';
+import { TRANSLATIONS } from '../../i18n/content';
+
+const t = TRANSLATIONS.en;
+---
+
+<Layout locale="en" meta={t.meta} nav={t.nav} footer={t.footer}>
+  <Hero hero={t.hero} />
+  <hr />
+  <About about={t.about} />
+  <hr />
+  <Projects projects={t.projects} />
+</Layout>
