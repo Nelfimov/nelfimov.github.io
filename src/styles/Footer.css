@@ -21,5 +21,6 @@ footer .container span {
 footer img {
   filter: grayscale(100%) invert();
   -webkit-filter: grayscale(100%) invert();
-  width: 40px;
+  width: auto;
+  height: 35px;
 }

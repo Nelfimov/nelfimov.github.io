@@ -83,6 +83,10 @@
     "git": {
       "label": "Git",
       "src": "/assets/icons/git.svg"
+    },
+    "astro": {
+      "label": "Astro",
+      "src": "/assets/icons/astro.svg"
     }
   }
 }
