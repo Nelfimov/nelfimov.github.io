@@ -73,16 +73,6 @@ section.hero img {
   animation: slideInFromRight 0.7s ease-out;
 }
 
-section.hero img.loading {
-  filter: blur(20px);
-  clip-path: inset(0);
-}
-
-section.hero img.loaded {
-  filter: blur(0px);
-  transition: filter 0.5s linear;
-}
-
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-100%);

@@ -1,5 +1,6 @@
 ---
-import ProgressiveImage from './ProgressiveImage.astro'
+import { Image } from 'astro:assets'
+import HeroHigh from '../assets/hero/hero.jpg'
 import '../styles/Hero.css'
 ---
 
@@ -15,5 +16,8 @@ import '../styles/Hero.css'
       <h2>Developer</h2>
     </div>
   </div>
-  <ProgressiveImage />
+  <Image
+    src={HeroHigh}
+    alt="profile"
+  />
 </section>
