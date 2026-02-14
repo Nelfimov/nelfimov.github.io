@@ -8,13 +8,8 @@ const base = import.meta.env.BASE_URL;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="refresh" content={`0; url=en/`} />
-    <title>Redirecting...</title>
   </head>
   <body>
-    <script>
-      const preferred = navigator.language.toLowerCase().startsWith('ru') ? 'ru' : 'en'
-      window.location.replace(`${preferred}/`)
-    </script>
     <a href={`${base}en/`}>Go to site</a>
   </body>
 </html>
