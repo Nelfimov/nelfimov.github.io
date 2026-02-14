@@ -1,0 +1,61 @@
+---
+import ICONS_LIST from '../assets/icons.json'
+---
+
+<footer>
+  <div class="container">
+    <span>Built with:</span>
+    <img
+      src={import.meta.env.BASE_URL + ICONS_LIST.tech.react.src}
+      alt={ICONS_LIST.tech.react.label}
+    />
+    <img
+      src={import.meta.env.BASE_URL + ICONS_LIST.tech.typescript.src}
+      alt={ICONS_LIST.tech.typescript.label}
+    />
+    <img
+      src={import.meta.env.BASE_URL + ICONS_LIST.tech.html.src}
+      alt={ICONS_LIST.tech.html.label}
+    />
+    <img
+      src={import.meta.env.BASE_URL + ICONS_LIST.tech.css.src}
+      alt={ICONS_LIST.tech.css.label}
+    />
+    <img
+      src={import.meta.env.BASE_URL + ICONS_LIST.tech.eslint.src}
+      alt={ICONS_LIST.tech.eslint.label}
+    />
+    <img
+      src={import.meta.env.BASE_URL + ICONS_LIST.tech.vite.src}
+      alt={ICONS_LIST.tech.vite.label}
+    />
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer .container {
+    margin-inline: auto;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  footer .container span {
+    color: white;
+    font-weight: 500;
+    padding-right: 5px;
+  }
+
+  footer img {
+    filter: grayscale(100%) invert();
+    -webkit-filter: grayscale(100%) invert();
+    width: 40px;
+  }
+</style>
