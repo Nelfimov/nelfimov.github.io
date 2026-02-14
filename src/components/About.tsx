@@ -62,7 +62,7 @@ const About = () => {
             <div className="stack" key={index}>
               <img
                 //@ts-expect-error: ignore
-                src={import.meta.env.BASE_URL + ICONS_LIST.tech[item].src}
+                src={ICONS_LIST.tech[item].src}
                 //@ts-expect-error: ignore
                 alt={ICONS_LIST.tech[item].label}
                 className="tech-icon"

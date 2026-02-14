@@ -7,22 +7,22 @@ const ProgressiveImage = () => {
   let img: HTMLImageElement
 
   if (window.innerWidth >= 800) {
-    placehoalder = import.meta.env.BASE_URL + HEROES_LIST['800_low']
-    image = import.meta.env.BASE_URL + HEROES_LIST['800']
+    placehoalder = HEROES_LIST['800_low']
+    image = HEROES_LIST['800']
   } else {
-    placehoalder = import.meta.env.BASE_URL + HEROES_LIST['400_low']
-    image = import.meta.env.BASE_URL + HEROES_LIST['400']
+    placehoalder = HEROES_LIST['400_low']
+    image = HEROES_LIST['400']
   }
 
   const [src, setSrc] = useState(placehoalder)
 
   const handleResize = () => {
     if (window.innerWidth >= 800) {
-      placehoalder = import.meta.env.BASE_URL + HEROES_LIST['800_low']
-      image = import.meta.env.BASE_URL + HEROES_LIST['800']
+      placehoalder = HEROES_LIST['800_low']
+      image = HEROES_LIST['800']
     } else {
-      placehoalder = import.meta.env.BASE_URL + HEROES_LIST['400_low']
-      image = import.meta.env.BASE_URL + HEROES_LIST['400']
+      placehoalder = HEROES_LIST['400_low']
+      image = HEROES_LIST['400']
     }
     img = new Image()
     img.src = image

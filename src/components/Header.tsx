@@ -89,7 +89,7 @@ const Header = () => {
           </nav>
           <div className="menu-button">
             <img
-              src={import.meta.env.BASE_URL + ICONS_LIST.general.menu}
+              src={ICONS_LIST.general.menu}
               alt="menu"
               onClick={handleClick}
             />
