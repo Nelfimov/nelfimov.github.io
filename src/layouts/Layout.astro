@@ -1,38 +1,19 @@
 ---
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import type { Locale } from '../i18n/content';
+import { getLangFromUrl, useTranslations } from '../i18n/utils.ts';
 
-interface Props {
-  locale: Locale;
-  meta: {
-    title: string;
-    applicationName: string;
-  };
-  nav: {
-    me: string;
-    about: string;
-    projects: string;
-    github: string;
-    switchTo: string;
-    switchAriaLabel: string;
-    menuAlt: string;
-  };
-  footer: {
-    builtWith: string;
-  };
-}
-
-const { locale, meta, nav, footer } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 <!doctype html>
-<html lang={locale}>
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#202020" />
-    <meta name="application-name" content={meta.applicationName} />
+    <meta name="application-name" content={t('meta.applicationName')} />
     <meta name="msapplication-TileColor" content="#fff" />
     <meta name="msapplication-TileImage" content="956f8a98" />
     <meta name="msapplication-config" content="560bc9bc" />
@@ -44,15 +25,15 @@ const { locale, meta, nav, footer } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 
-    <title>{meta.title}</title>
+    <title>{t('meta.title')}</title>
 	</head>
 
 	<body>
-    <Header locale={locale} nav={nav} />
+    <Header />
     <main>
       <slot />
     </main>
-    <Footer footer={footer} />
+    <Footer />
 
     <script is:inline>
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')

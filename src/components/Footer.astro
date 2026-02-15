@@ -1,19 +1,15 @@
 ---
 import ICONS_LIST from '../assets/icons.json'
 import '../styles/Footer.css'
+import { getLangFromUrl, useTranslations } from '../i18n/utils.ts';
 
-interface Props {
-  footer: {
-    builtWith: string
-  }
-}
-
-const { footer } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer>
   <div class="container">
-    <span>{footer.builtWith}</span>
+    <span>{t('footer.builtWith')}</span>
     <img
       src={ICONS_LIST.tech.astro.src}
       alt={ICONS_LIST.tech.astro.label}

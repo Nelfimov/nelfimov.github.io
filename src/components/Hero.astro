@@ -2,34 +2,26 @@
 import { Image } from 'astro:assets'
 import HeroHigh from '../assets/hero/hero.jpg'
 import '../styles/Hero.css'
+import { getLangFromUrl, useTranslations } from '../i18n/utils.ts';
 
-interface Props {
-  hero: {
-    firstName: string
-    lastName: string
-    roleFirst: string
-    roleSecond: string
-    imageAlt: string
-  }
-}
-
-const { hero } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="hero">
   <a class="nav-link" id="hero"></a>
   <div class="info">
     <div class="name">
-      <h1>{hero.firstName}</h1>
-      <h1>{hero.lastName}</h1>
+      <h1>{t('hero.firstName')}</h1>
+      <h1>{t('hero.lastName')}</h1>
     </div>
     <div class="prof">
-      <h2>{hero.roleFirst}</h2>
-      <h2>{hero.roleSecond}</h2>
+      <h2>{t('hero.roleFirst')}</h2>
+      <h2>{t('hero.roleSecond')}</h2>
     </div>
   </div>
   <Image
     src={HeroHigh}
-    alt={hero.imageAlt}
+    alt={t('hero.imageAlt')}
   />
 </section>
