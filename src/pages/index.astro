@@ -1,13 +1,14 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Projects from '../components/Projects.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta http-equiv="refresh" content="0;url=/en/" />
-  </head>
-  <body>
-  </body>
-</html>
+<Layout>
+  <Hero />
+  <hr />
+  <About />
+  <hr />
+  <Projects />
+</Layout>
