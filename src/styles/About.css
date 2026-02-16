@@ -95,11 +95,12 @@ section.about li {
 
   section.about > div {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, max-content);
+    grid-template-rows: repeat(2, min);
   }
 
   section.about div.tech {
     row-gap: 40px;
     justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
