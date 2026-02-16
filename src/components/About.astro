@@ -48,11 +48,6 @@ const toolsItems = Object.values(ICONS_LIST.about.tools)
         </div>
       ))}
     </div>
-    <div class="about-copy devops">
-      <div>
-        {DevOps ? <DevOps /> : null}
-      </div>
-    </div>
     <div class="tech">
       {devOpsItems.map((item) => (
         <div class="stack">
@@ -64,6 +59,11 @@ const toolsItems = Object.values(ICONS_LIST.about.tools)
           <p class="tech-label">{item.label}</p>
         </div>
       ))}
+    </div>
+    <div class="about-copy devops">
+      <div>
+        {DevOps ? <DevOps /> : null}
+      </div>
     </div>
     <div class="about-copy">
       <div>
