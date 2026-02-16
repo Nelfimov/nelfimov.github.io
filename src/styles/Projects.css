@@ -60,6 +60,7 @@ section.projects .card h3 {
 section.projects .card > a > img {
   width: 100%;
   border: 1px solid grey;
+  height: auto;
 }
 
 @media (min-width: 1000px) {

@@ -76,7 +76,7 @@ const PROJECTS = [
     {PROJECTS.map((project) => (
       <div class="card">
         <a href={project.href}>
-          <Image src={project.src} alt={project.name} height="180" />
+          <Image src={project.src} alt={project.name} />
           <h3>{project.name}</h3>
           <div class="stack">
             {project.stack.split(' ').map((item) => (
