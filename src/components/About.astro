@@ -7,10 +7,11 @@ import { getCollection, render } from 'astro:content'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
-const techItems = Object.values(ICONS_LIST.tech)
 const pages = await getCollection('about')
 const aboutPage = pages.find((page) => page.id === `${lang}/about`)
 const { Content } = aboutPage ? await render(aboutPage) : { Content: null }
+
+const techItems = Object.values(ICONS_LIST.about)
 ---
 
 <section class="about">

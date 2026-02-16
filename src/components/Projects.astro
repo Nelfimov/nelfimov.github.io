@@ -9,7 +9,8 @@ import Todo from '../assets/projects/todo.png'
 import Memory from '../assets/projects/memory.png'
 import TicTacToe from '../assets/projects/tictactoe.png'
 import '../styles/Projects.css'
-import { getLangFromUrl, useTranslations } from '../i18n/utils.ts';
+import { getLangFromUrl } from '../i18n/utils.ts'
+import { useTranslations } from '../i18n/utils.ts'
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -20,7 +21,7 @@ const PROJECTS = [
     "name": t('projects.ecommerce'),
     "src": Ecommerce,
     "href": "https://github.com/Nelfimov/django-eshop",
-    "stack": "django python javascript sqlite html css"
+    "stack": "django python javascript html css"
   },
   {
     "id": "2",

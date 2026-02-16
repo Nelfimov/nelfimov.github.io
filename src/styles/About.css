@@ -9,7 +9,7 @@ section.about > h1 {
 
 section.about > div {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
 
@@ -29,7 +29,7 @@ section.about .active {
 
 section.about div.tech {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 10px;
   justify-items: center;
 }
@@ -85,6 +85,15 @@ section.about .tech-label {
 
   section.about > div {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, min-content);
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  section.about div.tech {
+    row-gap: 40px;
+    justify-items: center;
+  }
+
+  section.about div.stack {
+    row-gap: 20px;
   }
 }
