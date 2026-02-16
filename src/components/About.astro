@@ -8,21 +8,70 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 
 const pages = await getCollection('about')
-const aboutPage = pages.find((page) => page.id === `${lang}/about`)
-const { Content } = aboutPage ? await render(aboutPage) : { Content: null }
+const aboutDev = pages.find((page) => page.id === `${lang}/dev`)
+const aboutDevOps = pages.find((page) => page.id === `${lang}/devops`)
+const aboutHobby = pages.find((page) => page.id === `${lang}/hobby`)
+const aboutPhilosophy = pages.find((page) => page.id === `${lang}/philosophy`)
+const { Content: Philosophy } = aboutPhilosophy ? await render(aboutPhilosophy) : { Content: null }
+const { Content: Dev } = aboutDev ? await render(aboutDev) : { Content: null }
+const { Content: DevOps } = aboutDevOps ? await render(aboutDevOps) : { Content: null }
+const { Content: Hobby } = aboutHobby ? await render(aboutHobby) : { Content: null }
 
-const techItems = Object.values(ICONS_LIST.about)
+const devItems = Object.values(ICONS_LIST.about.dev)
+const devOpsItems = Object.values(ICONS_LIST.about.devops)
+const toolsItems = Object.values(ICONS_LIST.about.tools)
 ---
 
 <section class="about">
   <a class="nav-link" id="about"></a>
   <h1>{t('about.title')}</h1>
   <div data-about-observe>
-    {Content ? <div class="about-copy">
-      <Content />
-    </div> : null}
+    <div class="about-copy philosophy">
+      <div>
+        {Philosophy ? <Philosophy /> : null}
+      </div>
+    </div>
+    <div class="about-copy dev">
+      <div>
+        {Dev ? <Dev /> : null}
+      </div>
+    </div>
     <div class="tech">
-      {techItems.map((item) => (
+      {devItems.map((item) => (
+        <div class="stack">
+          <img
+            src={item.src}
+            alt={item.label}
+            class="tech-icon"
+          />
+          <p class="tech-label">{item.label}</p>
+        </div>
+      ))}
+    </div>
+    <div class="about-copy devops">
+      <div>
+        {DevOps ? <DevOps /> : null}
+      </div>
+    </div>
+    <div class="tech">
+      {devOpsItems.map((item) => (
+        <div class="stack">
+          <img
+            src={item.src}
+            alt={item.label}
+            class="tech-icon"
+          />
+          <p class="tech-label">{item.label}</p>
+        </div>
+      ))}
+    </div>
+    <div class="about-copy">
+      <div>
+        {Hobby ? <Hobby /> : null}
+      </div>
+    </div>
+    <div class="tech">
+      {toolsItems.map((item) => (
         <div class="stack">
           <img
             src={item.src}

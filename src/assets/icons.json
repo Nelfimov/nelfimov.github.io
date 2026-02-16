@@ -4,97 +4,107 @@
     "github": "/assets/icons/github.svg"
   },
   "about": {
-    "rust": {
-      "label": "Rust",
-      "src": "/assets/icons/rust.svg"
+    "dev": {
+      "rust": {
+        "label": "Rust",
+        "src": "/assets/icons/rust.svg"
+      },
+      "typescript": {
+        "label": "Typescript",
+        "src": "/assets/icons/typescript.svg"
+      },
+      "react": {
+        "label": "React",
+        "src": "/assets/icons/react.svg"
+      },
+      "nextjs": {
+        "label": "Next.js",
+        "src": "/assets/icons/nextjs.svg"
+      },
+      "nestjs": {
+        "label": "NestJS",
+        "src": "/assets/icons/nestjs.svg"
+      },
+      "node": {
+        "label": "Node.js",
+        "src": "/assets/icons/nodejs.svg"
+      }
     },
-    "typescript": {
-      "label": "Typescript",
-      "src": "/assets/icons/typescript.svg"
+    "devops": {
+      "kubernetes": {
+        "label": "k8s",
+        "src": "/assets/icons/kubernetes.svg"
+      },
+      "docker": {
+        "label": "Docker",
+        "src": "/assets/icons/docker.svg"
+      },
+      "aws": {
+        "label": "AWS",
+        "src": "/assets/icons/aws.svg"
+      },
+      "terraform": {
+        "label": "Terraform",
+        "src": "/assets/icons/terraform.svg"
+      },
+      "ansible": {
+        "label": "Ansible",
+        "src": "/assets/icons/ansible.svg"
+      },
+      "jenkins": {
+        "label": "Jenkins",
+        "src": "/assets/icons/jenkins.svg"
+      },
+      "github": {
+        "label": "GitHub Actions",
+        "src": "/assets/icons/github.svg"
+      },
+      "grafana": {
+        "label": "Grafana Stack",
+        "src": "/assets/icons/grafana.svg"
+      },
+      "nginx": {
+        "label": "Nginx",
+        "src": "/assets/icons/nginx.svg"
+      },
+      "postgresql": {
+        "label": "PostgreSQL",
+        "src": "/assets/icons/postgresql.svg"
+      },
+      "rabbitmq": {
+        "label": "RabbitMQ",
+        "src": "/assets/icons/rabbitmq.svg"
+      },
+      "redis": {
+        "label": "Redis",
+        "src": "/assets/icons/redis.svg"
+      },
+      "elasticsearch": {
+        "label": "ElasticSearch",
+        "src": "/assets/icons/elasticsearch.svg"
+      }
     },
-    "ruby": {
-      "label": "Ruby",
-      "src": "/assets/icons/ruby.svg"
-    },
-    "react": {
-      "label": "React",
-      "src": "/assets/icons/react.svg"
-    },
-    "nextjs": {
-      "label": "Next.js",
-      "src": "/assets/icons/nextjs.svg"
-    },
-    "nestjs": {
-      "label": "NestJS",
-      "src": "/assets/icons/nestjs.svg"
-    },
-    "webpack": {
-      "label": "Webpack",
-      "src": "/assets/icons/webpack.svg"
-    },
-    "node": {
-      "label": "Node.js",
-      "src": "/assets/icons/nodejs.svg"
-    },
-    "kubernetes": {
-      "label": "k8s",
-      "src": "/assets/icons/kubernetes.svg"
-    },
-    "docker": {
-      "label": "Docker",
-      "src": "/assets/icons/docker.svg"
-    },
-    "aws": {
-      "label": "AWS",
-      "src": "/assets/icons/aws.svg"
-    },
-    "nix": {
-      "label": "nix",
-      "src": "/assets/icons/nix.svg"
-    },
-    "terraform": {
-      "label": "Terraform",
-      "src": "/assets/icons/terraform.svg"
-    },
-    "ansible": {
-      "label": "Ansible",
-      "src": "/assets/icons/ansible.svg"
-    },
-    "jenkins": {
-      "label": "Jenkins",
-      "src": "/assets/icons/jenkins.svg"
-    },
-    "github": {
-      "label": "GitHub Actions",
-      "src": "/assets/icons/github.svg"
-    },
-    "grafana": {
-      "label": "Grafana Stack",
-      "src": "/assets/icons/grafana.svg"
-    },
-    "nginx": {
-      "label": "Nginx",
-      "src": "/assets/icons/nginx.svg"
-    },
-    "rabbitmq": {
-      "label": "RabbitMQ",
-      "src": "/assets/icons/rabbitmq.svg"
-    },
-    "redis": {
-      "label": "Redis",
-      "src": "/assets/icons/redis.svg"
-    },
-    "elasticsearch": {
-      "label": "ElasticSearch",
-      "src": "/assets/icons/elasticsearch.svg"
-    },
-    "postgresql": {
-      "label": "PostgreSQL",
-      "src": "/assets/icons/postgresql.svg"
-    },
-    "neovim": {
-      "label": "Neovim",
-      "src": "/assets/icons/neovim.svg"
+    "tools": {
+      "neovim": {
+        "label": "Neovim",
+        "src": "/assets/icons/neovim.svg"
+      },
+      "nix": {
+        "label": "nix",
+        "src": "/assets/icons/nix.svg"
+      },
+      "ghostty": {
+        "label": "Ghostty",
+        "src": "/assets/icons/ghostty.svg"
+      },
+      "zellij": {
+        "label": "Zellij",
+        "src": "/assets/icons/zellij.svg"
+      },
+      "obsidian": {
+        "label": "Obsidian",
+        "src": "/assets/icons/obsidian.svg"
+      }
     }
   },
   "tech": {

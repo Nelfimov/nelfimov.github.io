@@ -10,10 +10,10 @@ section.about > h1 {
 section.about > div {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  gap: 50px 0;
 }
 
-section.about > div > .about-copy {
+section.about .about-copy {
   margin-inline: 1rem;
 }
 
@@ -21,6 +21,10 @@ section.about > div .about-copy,
 section.about > div .stack {
   opacity: 0;
   transition: opacity 1s 0.5s;
+}
+
+section.about div.philosophy {
+  grid-column: 1 / span 2;
 }
 
 section.about .active {
@@ -36,8 +40,9 @@ section.about div.tech {
 
 section.about div.stack {
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: min-content;
   justify-items: center;
+  row-gap: 20px;
 }
 
 section.about .active div.stack:nth-child(2n - 1) {
@@ -66,6 +71,10 @@ section.about .tech-label {
   font-size: 14px;
 }
 
+section.about li {
+  margin: 5px 0;
+}
+
 @keyframes fadeInDropDown {
   from {
     transform: translateY(-100%);
@@ -91,9 +100,5 @@ section.about .tech-label {
   section.about div.tech {
     row-gap: 40px;
     justify-items: center;
-  }
-
-  section.about div.stack {
-    row-gap: 20px;
   }
 }

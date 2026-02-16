@@ -1,0 +1,6 @@
+- I don’t tolerate cargo-cult `SOLID` — only when it actually makes sense.
+- I’m allergic to code without tests, `TDD` is the baseline.
+- I dislike “architecture” that collapses on first change — I stick to Clean Architecture (Hexagonal, DDD).
+- Manual infrastructure is a red flag — `Infrastructure as Code` or nothing.
+- Loosely typed code is a long-term liability — strict typing only.
+- prefer developing in `nix` shell environments
