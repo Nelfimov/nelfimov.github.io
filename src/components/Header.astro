@@ -1,32 +1,20 @@
 ---
 import '../styles/Header.css'
 import ICONS_LIST from '../assets/icons.json'
-import type { Locale } from '../i18n/content'
 import { getRelativeLocaleUrl } from 'astro:i18n'
+import { getLangFromUrl, useTranslations } from '../i18n/utils.ts';
 
-interface Props {
-  locale: Locale
-  nav: {
-    me: string
-    about: string
-    projects: string
-    github: string
-    switchTo: string
-    switchAriaLabel: string
-    menuAlt: string
-  }
-}
-
-const { locale, nav } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const NAV_LINKS = [
-  { href: '#hero', text: nav.me },
-  { href: '#about', text: nav.about },
-  { href: '#projects', text: nav.projects },
-  { href: 'https://github.com/nelfimov', text: nav.github },
+  { href: '#hero', text: t('nav.me') },
+  { href: '#about', text: t('nav.about') },
+  { href: '#projects', text: t('nav.projects') },
+  { href: 'https://github.com/nelfimov', text: t('nav.github') },
 ]
 
-const nextLocale = locale === 'en' ? 'ru' : 'en'
+const nextLocale = lang === 'en' ? 'ru' : 'en'
 const localeHref = getRelativeLocaleUrl(nextLocale)
 ---
 
@@ -39,11 +27,11 @@ const localeHref = getRelativeLocaleUrl(nextLocale)
         </a>
       ))}
     </nav>
-    <a href={localeHref} aria-label={nav.switchAriaLabel} class="lang-switch">
-      {nav.switchTo}
+    <a href={localeHref} aria-label={t('nav.language-label')} class="lang-switch">
+      {t('nav.language')}
     </a>
     <div class="menu-button">
-      <img src={ICONS_LIST.general.menu} alt={nav.menuAlt} data-menu-toggle />
+      <img src={ICONS_LIST.general.menu} alt={t('nav.menuAlt')} data-menu-toggle />
     </div>
   </div>
 </header>
@@ -57,8 +45,8 @@ const localeHref = getRelativeLocaleUrl(nextLocale)
       </li>
     ))}
     <li>
-      <a href={localeHref} aria-label={nav.switchAriaLabel} class="lang-switch">
-        {nav.switchTo}
+      <a href={localeHref} aria-label={t('nav.language-label')} class="lang-switch">
+        {t('nav.language')}
       </a>
     </li>
   </ul>

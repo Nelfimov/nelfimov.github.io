@@ -9,62 +9,57 @@ import Todo from '../assets/projects/todo.png'
 import Memory from '../assets/projects/memory.png'
 import TicTacToe from '../assets/projects/tictactoe.png'
 import '../styles/Projects.css'
+import { getLangFromUrl, useTranslations } from '../i18n/utils.ts';
 
-interface Props {
-  projects: {
-    title: string
-    items: string[]
-  }
-}
-
-const { projects } = Astro.props
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const PROJECTS = [
   {
     "id": "1",
-    "name": projects.items[0],
+    "name": t('projects.ecommerce'),
     "src": Ecommerce,
     "href": "https://github.com/Nelfimov/django-eshop",
     "stack": "django python javascript sqlite html css"
   },
   {
     "id": "2",
-    "name": projects.items[1],
+    "name": t('projects.ecommerce2'),
     "src": Ecommerce2,
     "href": "https://github.com/Nelfimov/eshop-fullstack",
     "stack": "nextjs typescript express node mongodb bootstrap html css"
   },
   {
     "id": "3",
-    "name": projects.items[2],
+    "name": t('projects.waldo'),
     "src": Waldo,
     "href": "https://nelfimov.github.io/odin-phototaggingapp/",
     "stack": "react firebase html css webpack"
   },
   {
     "id": "4",
-    "name": projects.items[3],
+    "name": t('projects.battleship'),
     "src": Battleship,
     "href": "https://nelfimov.github.io/odin-battleship/",
     "stack": "javascript html css webpack"
   },
   {
     "id": "5",
-    "name": projects.items[4],
+    "name": t('projects.todo'),
     "src": Todo,
     "href": "https://nelfimov.github.io/odin-todoapp/",
     "stack": "javascript html css webpack"
   },
   {
     "id": "6",
-    "name": projects.items[5],
+    "name": t('projects.memory'),
     "src": Memory,
     "href": "https://nelfimov.github.io/odin-memory-card/",
     "stack": "react html css webpack"
   },
   {
     "id": "7",
-    "name": projects.items[6],
+    "name": t('projects.tictactoe'),
     "src": TicTacToe,
     "href": "https://nelfimov.github.io/odin-tictactoe/",
     "stack": "javascript html css webpack"
@@ -75,7 +70,7 @@ const PROJECTS = [
 
 <section class="projects">
   <a class="nav-link" id="projects"></a>
-  <h1>{projects.title}</h1>
+  <h1>{t('projects.title')}</h1>
   <div class="card-container" data-project-cards>
     {PROJECTS.map((project) => (
       <div class="card">

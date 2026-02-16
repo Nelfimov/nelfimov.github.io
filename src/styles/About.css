@@ -13,18 +13,18 @@ section.about > div {
   gap: 20px;
 }
 
-section.about > div > p {
+section.about > div > .about-copy {
   margin-inline: 1rem;
 }
 
-section.about > div > p,
+section.about > div .about-copy,
 section.about > div .stack {
   opacity: 0;
   transition: opacity 1s 0.5s;
 }
 
 section.about .active {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 section.about div.tech {
@@ -79,7 +79,7 @@ section.about .tech-label {
 }
 
 @media (max-width: 800px) {
-  section.about p {
+  section.about .about-copy p {
     font-size: 1rem;
   }
 

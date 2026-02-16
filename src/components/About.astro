@@ -1,24 +1,25 @@
 ---
 import '../styles/About.css'
 import ICONS_LIST from '../assets/icons.json'
+import { getLangFromUrl, useTranslations } from '../i18n/utils.ts'
+import { getCollection, render } from 'astro:content'
 
-interface Props {
-  about: {
-    title: string
-    html: string
-  }
-}
-
-const { about } = Astro.props
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 
 const techItems = Object.values(ICONS_LIST.tech)
+const pages = await getCollection('about')
+const aboutPage = pages.find((page) => page.id === `${lang}/about`)
+const { Content } = aboutPage ? await render(aboutPage) : { Content: null }
 ---
 
 <section class="about">
   <a class="nav-link" id="about"></a>
-  <h1>{about.title}</h1>
+  <h1>{t('about.title')}</h1>
   <div data-about-observe>
-    <p set:html={about.html}></p>
+    {Content ? <div class="about-copy">
+      <Content />
+    </div> : null}
     <div class="tech">
       {techItems.map((item) => (
         <div class="stack">
